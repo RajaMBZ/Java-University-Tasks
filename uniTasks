@@ -1,0 +1,39 @@
+--------------------------------------------------------
+
+public static String stringtoInteger(String x)  {
+	int a = 0, z;
+    for (int i = 0; i<x.length(); ++i)	{
+	  if (x.charAt(i) >= 48 && x.charAt(i)<=57)
+        a = a+1;
+	  }
+	if (a == x.length())      {
+	  z = Integer.parseInt(x);
+	}
+	else                      {
+	  z = -1;
+	}
+	return ('z');
+}
+public static void main(String[] args)    {
+	Scanner input = new Scanner(System.in);
+	String x = input.nextLine();
+	System.out.println(stringtoInteger(x));
+     }
+}
+
+--------------------------------------------------------
+
+public class JavaApplication21 {
+
+public static void main(String[] args) 
+     {
+	char abd = (char) (97 + Math.random()*26);
+	char abe = (char) (97 + Math.random()*26);
+	char abf = (char) (97 + Math.random()*26);
+	int abc = (int) (Math.random()*10000);
+	System.out.println(abd+""+abe+""+abf+""+abc);
+     }
+}
+
+--------------------------------------------------------
+
