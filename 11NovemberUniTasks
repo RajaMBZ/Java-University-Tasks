@@ -37,3 +37,118 @@ public static void main(String[] args)
 
 --------------------------------------------------------
 
+public static String reverse(String x)  {
+		
+	String reverse = "";
+	for(int i = x.length() - 1; i >= 0; i--)
+	{
+		reverse = reverse + x.charAt(i);
+	}
+	return (reverse);
+		
+}
+public static void main(String[] args) 
+     {
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter string to reverse:");
+	String x = input.nextLine();
+	System.out.println("Reversed string is:");
+	System.out.println(reverse(x));
+     }
+}
+
+--------------------------------------------------------
+
+public static String[] wordSearch(String[] x)  {
+	Scanner input = new Scanner(System.in);		
+	String check = input.nextLine();
+	int a = 0;
+	while (a<(x.length))     {
+	     if (check.equals(x[a]))	{
+		System.out.println("The word is present! Replace it with?");
+		String replace = input.nextLine();
+		x[a]=replace;
+		System.out.println(x[a]);
+	     }
+	     ++a;
+	}
+	return x;
+}
+public static void main(String[] args) 
+     {
+	String[] thisIsAStringArray;
+	thisIsAStringArray = new String[] {"Asparagus", "Carrot", "Tomato"};
+	wordSearch(thisIsAStringArray);
+	System.out.println("After replacing, new elements of the array include:");
+	System.out.println(thisIsAStringArray[0]);
+	System.out.println(thisIsAStringArray[1]);
+	System.out.println(thisIsAStringArray[2]);
+     }
+}
+
+--------------------------------------------------------
+
+public class JavaApplication2 {
+    public static void main(String args[]) {
+
+        String ch[] = {"a","a","b","b","d"};
+        int n = ch.length;
+        for(int i=0;i<n;i++){
+            System.out.print(ch[i]+" ");
+        }
+        System.out.println();
+        int fin[] = new int[n];
+        for(int i=0;i<n;i++){
+            fin[i] = 0;
+        }
+        for(int i =0;i<n;i++){
+            if (i != n-1){
+                for(int j=0;j<n;j++){
+                    if(ch[i].equals(ch[j]) )
+                        fin[i]++;
+                }
+            }
+            else if (ch[n-2].equals(ch[n-1])){
+            fin[i] = fin[i-1];
+         }
+
+         else fin[i] = 1;
+        }
+        int max = 0,index = 0;
+        for(int i=0;i<n;i++){
+	     System.out.print(fin[i]+" ");
+		if (fin[i] >= max){
+		     max = fin[i];
+		     index = i;
+		}
+
+        }
+    }
+}
+
+--------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class JavaApplication2 {
+
+public static void numFrac(double[] number, int num, double frac)  {
+	Scanner input = new Scanner (System.in);
+	System.out.println("Which element?");
+	int x = input.nextInt(); --x;
+	num = (int)number[x];
+	frac = number[x]-num;     
+	     System.out.println("Decimal = "+frac);
+	     System.out.println("Integer = "+num);
+}
+
+public static void main(String args[]) {
+	double[] number = {1.11,3.31,4.41,5.51};
+	int num=0; double frac=0;
+	numFrac(number, num, frac);
+    }
+}
+
+--------------------------------------------------------
+
