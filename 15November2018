@@ -1,0 +1,59 @@
+------------------------Task No.1------------------------
+
+public static void main(String args[]) {
+     
+     String s = "Your age is 20 years. Your are 2nd semester.";
+     int aC=0, nC=0, ascii;
+     for (int i = 0; i<s.length(); i++)     {
+	ascii = s.charAt(i);
+	if ((ascii >= 97 && ascii <= 122) || (ascii >= 65 && ascii <=90))
+	     ++aC;
+	if (ascii >= 48 && ascii <= 57)
+	     ++nC;	
+     }
+     System.out.println("Given string = "+s);
+     System.out.println("Alphabets = "+aC);
+     System.out.println("Numerics = "+nC);
+   }
+
+------------------------Task No.2------------------------
+
+public static void main(String[] args)
+   {
+      Scanner input = new Scanner(System.in);
+      System.out.println("Type a string:");
+      String s = input.nextLine();
+      char[] c = s.toCharArray();
+      int[] freq = new int[26];
+      for(int i = 0; i< c.length;i++) 
+      {
+         if(c[i] <= 122)
+         {
+            if(c[i] >= 97)
+            {
+               freq[(c[i]-97)]++;
+            }
+         }        
+      }
+      for(int i = 0; i < 26; i++)
+      {
+         if(freq[i] != 0)   
+            System.out.println(((char)(i+97)) + "\t" + freq[i]);
+      }      
+   }
+
+------------------------Task No.3------------------------
+
+------------------------Task No.4------------------------
+
+------------------------Task No.5------------------------
+
+------------------------Task No.6------------------------
+
+------------------------Task No.7------------------------
+
+------------------------Task No.8------------------------
+
+------------------------Task No.9------------------------
+
+------------------------Task No.10-----------------------
