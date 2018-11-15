@@ -44,7 +44,50 @@ public static void main(String[] args)
 
 ------------------------Task No.3------------------------
 
+public static boolean contains(Integer[] arr, Integer item) {
+      return Arrays.stream(arr).anyMatch(item::equals);
+   }
+   
+   public static void main(String[] args)
+   {
+      Scanner input = new Scanner(System.in);
+      int e;
+      System.out.println("Original array = ");
+      String s = input.nextLine();
+      char[] c = s.toCharArray();
+      char[] d = new char[s.length()];
+      Integer f[] = new Integer[s.length()];
+      for (int i = 0; i<s.length(); ++i)  {
+	 e = (int)(Math.random()*(s.length()));
+	 if (contains(f, e) == false) {
+	      d[i]=c[e];
+	      f[i]=e;
+	 }
+	 else	{
+	      --i;
+	 }
+    }
+      String b = new String(d);
+        System.out.println("Shuffled array: "+b);
+   }
+
 ------------------------Task No.4------------------------
+
+public static char[] str2char(String S) {
+        char[] a = S.toCharArray();
+        return a;
+   }
+   
+   public static void main(String[] args)
+   {
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter a string = ");
+      String s = input.nextLine();
+      System.out.println(str2char(s)[0]);
+      System.out.println(str2char(s)[1]);
+      System.out.println(str2char(s)[2]);
+      System.out.println(str2char(s)[3]);
+   }
 
 ------------------------Task No.5------------------------
 
