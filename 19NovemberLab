@@ -1,0 +1,58 @@
+public static int[] row(int[][] a)	{ 
+     Scanner input = new Scanner(System.in);
+     int b = 3;
+     int c[] = {0,0,0};
+     System.out.println("Which row?");
+     int x = input.nextInt();
+     while (x > 3)	{
+	   System.out.println("You're going out of range (1-3)! Try Again...");
+	   System.out.println("Which row?");
+	   x = input.nextInt();
+     }
+     int d = 0;
+     while (b>0)	{
+	c[d]=a[(x-1)][d];
+	++d;
+	--b;
+     }
+     return c;
+}   
+
+public static int[] col(int[][] a)	{ 
+     Scanner input = new Scanner(System.in);
+     int b = 3;
+     int c[] = {0,0,0};
+     System.out.println("Which column?");
+     int x = input.nextInt();
+     while (x > 3)	{
+	   System.out.println("You're going out of range (1-3)! Try Again...");
+	   System.out.println("Which column?");
+	   x = input.nextInt();
+     }
+     int d = 0;
+     while (b>0)	{
+	c[d]=a[d][(x-1)];
+	++d;
+	--b;
+     }
+     return c;
+}
+
+public static void main(String[] args)        
+     {
+     int loop = 1;
+     while (loop == 1) {  
+	Scanner input = new Scanner(System.in);
+	int[][] a = {
+	     {1,0,0},
+	     {2,0,0},
+	     {3,0,0}};
+     System.out.println("\nWhat would you like to do?\n1. Find column\n2. Find row");
+     int x = input.nextInt();
+     if (x == 1)
+	System.out.println(Arrays.toString(col(a)));
+     if (x == 2)
+	System.out.println(Arrays.toString(row(a)));
+     }
+  }
+}
