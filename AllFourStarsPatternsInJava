@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class JavaApplication2 {
+     
+public static void main(String args[]){
+Scanner input = new Scanner(System.in);
+int x = input.nextInt();
+        // (A)         
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if(column > row) continue ;
+                System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        // (B)         
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if(column < row) continue ;
+                System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        //(C)
+        System.out.println("(C)") ;
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if( column < row ) System.out.print(" ") ;
+                else System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        // (D)
+        System.out.println("(D)") ;
+        for(int row = 0 ; row < x ; row++){
+            for(int column = x ; column >= 0 ; column--){
+                if( column > row ){ System.out.print(" ") ; }
+                else {System.out.print("*"); }
+            }
+            System.out.println() ;
+        }
+    }
+}
