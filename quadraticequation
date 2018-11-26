@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+
+public class JavaApplication2 {
+
+public static int solveQuadratic(int a, int b, int c)  {
+      double secondRoot = 0, firstRoot = 0, determinant = (b*b)-(4*a*c);
+      double sqrt = Math.sqrt(determinant);
+      int x;
+      if(determinant>0){
+         firstRoot = (-b + sqrt)/(2*a);
+         secondRoot = (-b - sqrt)/(2*a);
+         System.out.println("Roots are :: "+ firstRoot +" and "+secondRoot);
+         x = 0;
+      }else if(determinant == 0){
+         System.out.println("Root is :: "+(-b + sqrt)/(2*a));
+         x = 0;}
+         else  {System.out.println("");
+	       x = -1;
+	       }
+     return x;
+}  
+public static void main(String args[]){
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter the value of a ::");
+      int a = sc.nextInt();
+
+      System.out.println("Enter the value of b ::");
+      int b = sc.nextInt();
+
+      System.out.println("Enter the value of c ::");
+      int c = sc.nextInt();
+      System.out.println(solveQuadratic(a,b,c));
+    }
+}
