@@ -1,0 +1,33 @@
+
+import java.util.Arrays;
+
+public class JavaApplication2 {
+
+public static int[][] func(int[][] take){
+     int new_array[][] = new int[5][10];
+   boolean p;
+   for(int i=0; i < 5; i++)	{
+        p = false;
+	for(int j=0; j < 10; ++j)	{
+	     if (take[i][j]==1)
+		p = true;
+	     if (p == true)
+		new_array[i][j] = take[i][j];
+	     else
+		new_array[i][j] = 0;
+			}	}
+   return new_array;
+}
+
+public static void main(String args[])  
+
+{
+     int[][] x = {	{0,6,0,1,4,6,7,8,9,10},
+		{3,2,1,1,4,6,7,8,9,10},
+		{0,0,4,1,4,6,7,8,9,10},
+		{0,5,0,1,4,6,7,8,9,10},
+		{0,0,0,1,4,6,7,8,9,10},
+		};
+     System.out.println(Arrays.deepToString(func(x)));
+};
+}
