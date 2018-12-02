@@ -4,11 +4,11 @@ import java.util.Arrays;
 public class JavaApplication2 {
 
 public static int[][] func(int[][] take){
-     int new_array[][] = new int[5][10];
+   int new_array[][] = new int[5][10];
    boolean p;
-   for(int i=0; i < 5; i++)	{
+   for(int i=0; i < take.length; i++)	{
         p = false;
-	for(int j=0; j < 10; ++j)	{
+	for(int j=0; j < take[0].length; ++j)	{
 	     if (take[i][j]==1)
 		p = true;
 	     if (p == true)
