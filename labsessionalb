@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class JavaApplication2 {
+
+public static int[][] func(int[][] take){
+     int new_array[][] = new int[take.length][((take[0].length)/2)];
+     for(int i=0; i < take.length; i++)	{
+	for(int j=1, k=0; j < take[0].length; j=j+2, ++k)	{
+		new_array[i][k] = take[i][j];
+}
+     }
+     return new_array;
+
+}
+public static void main(String args[])  
+
+{
+     int[][] x = {	{01,02,03,04,05,06},
+		{11,12,13,14,15,16},
+		{21,22,23,24,25,26},
+		{31,32,33,34,35,36}
+		};
+     System.out.println(Arrays.deepToString(func(x)));
+}
+}
