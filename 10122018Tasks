@@ -38,3 +38,25 @@ public static void main(String args[])
 ------------------------------------------------------------------------------
 
 
+public class JavaApp {
+
+public static String searchArray (String arr[], String k, int x)
+     { 
+	if (arr[x] == k)     
+	     return "PRESENT!";
+	if (x<arr.length)
+	     return searchArray(arr,k,x+1);
+	return "NOT FOUND!";
+     } 
+       
+     // Driver method 
+     public static void main(String[] args)  
+     { 
+        String arr[] = {"abc", "def", "ghi", "jkl", "mno"}; 
+        String x = "mno";
+        int y = 0;
+        System.out.println(searchArray(arr,x,y));
+     }
+}
+
+------------------------------------------------------------------------------
