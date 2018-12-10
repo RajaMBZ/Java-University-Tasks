@@ -60,3 +60,68 @@ public static String searchArray (String arr[], String k, int x)
 }
 
 ------------------------------------------------------------------------------
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class JavaApp {
+     
+public static int search1D(int x[][],int[] c) {
+     int rowIndex = 0;
+     for (int a = 0; a<x.length; ++a)	{
+	if (Arrays.equals(c,x[a]))	{
+	     rowIndex = a;
+	}
+     }
+     return rowIndex;
+
+}
+
+public static void main(String[] args) {
+        int arr[][] = {  {1,2,3,04,05,06},
+		     {7,8,9,10,11,12},
+		     {1,2,3,04,06,04}
+		  };
+		  
+        int[] x = {7,8,9,10,11,12};
+        System.out.println("Index of the row: "+search1D(arr,x));
+}
+}
+
+------------------------------------------------------------------------------
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class JavaApp {
+     
+public static int search1D(int x[][],int[] c) {
+     int columnIndex = 0, ab = 0;
+     for (int a = 0; a<x.length; ++a)	{
+        for (int b = 0; b<x.length; ++b)	{
+	if (x[b][a] == c[b])	{
+	     ++ab;
+	     if ((ab+1) == c.length) {
+		columnIndex = a;
+		return columnIndex;
+	     }
+	}
+     }
+        ab = 0;
+     }
+     return columnIndex;
+
+}
+
+public static void main(String[] args) {
+        int arr[][] = {  {1,2,3,04,05,06},
+		     {7,8,9,10,11,12},
+		     {1,2,3,04,06,04}
+		  };
+		  
+        int[] x = {3,9,3};
+        System.out.println("Index of the column: "+search1D(arr,x));
+}
+}
+
+-------------------------------------------------------------------------------
