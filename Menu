@@ -1,0 +1,125 @@
+package javaapplication3;
+import java.util.Arrays;
+import java.util.Scanner;
+public class JavaApplication3 {
+
+     
+public static int fact(int n)	{
+       if(n==1 || n==0){
+         return 1;
+       }
+       return fact(n-1)* n;
+}
+
+public static int[] diagonal(int[][] n)	{
+     int[] a = new int[n.length];
+     for (int ay = 0; ay < n.length; ++ay)
+	a[ay] = n[ay][ay];
+     return a;
+}
+
+public static boolean wordSearch(String[][] a)  {
+	     Scanner input = new Scanner(System.in);
+	     String s = input.nextLine();
+     	     for (int y = 0; y<a.length; ++y)	{
+		for (int z = 0; z<a[y].length; ++z)   {
+		     if (a[y][z].equals(s)) return true;
+		}
+	     }
+	     return false;
+}
+
+public static int gcd(int n1, int n2)	{
+     while (n1 != n2)    {
+	if (n1 > n2)
+	     n1 = n1-n2;
+	else
+	     n2 = n2-n1;
+     }
+     return n1;
+}
+
+public static void stars(int x)   {
+        // (A)         
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if(column > row) continue ;
+                System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        // (B)         
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if(column < row) continue ;
+                System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        //(C)
+        for(int row = 0 ; row < x ; row++){
+            for(int column = 0 ; column < x ; column++){
+                if( column < row ) System.out.print(" ") ;
+                else System.out.print("*");
+            }
+            System.out.println() ;
+        }
+        // (D)
+        for(int row = 0 ; row < x ; row++){
+            for(int column = x ; column >= 0 ; column--){
+                if( column > row ){ System.out.print(" ") ; }
+                else {System.out.print("*"); }
+            }
+            System.out.println() ;
+        }
+}
+
+public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+     boolean a = true;
+     while (a==true) {
+     System.out.println(
+     "What would you like to do?\n"
+	   + "1. Find diagonal of a matrix\n"
+	   + "2. Search for a word in an array\n"
+	   + "3. Find factorial of a number\n"
+	   + "4. Make GCD method and then find LCM from it\n"
+	   + "5. Make for star patterns of x columns & rows"
+     );
+	char x = input.next().charAt(0);
+	int sw = (int) x - 48;
+     switch (sw)	{
+	case 1:
+	     int[][] d = new int[2][2];
+	     for (int y = 0; y<d.length; ++y)	{
+		for (int z = 0; z<d[y].length; ++z)   {
+		     d[y][z] = input.nextInt();}}
+	     System.out.println(Arrays.toString(diagonal(d)));
+	     break;
+	case 2:
+	     String[][] words = {{"Mohammad", "Bakhtiar"},
+		{"Raja", "Zuberi"}
+	     };
+	     System.out.println(wordSearch(words));
+	     break;
+	case 3:
+	     int y = input.nextInt();
+	     System.out.println(fact(y));
+	     break;
+	case 4:
+	     int one = input.nextInt();
+	     int two = input.nextInt();
+	     System.out.println(((one*two)/gcd(one,two)));
+	     break;
+	case 5:
+	     int st = input.nextInt();
+	     stars(st);
+	     break;
+	default:
+	     System.out.println("What the hell have you entered? TRY AGAIN...");
+	     continue;
+     }
+     System.out.println("Would you like to run the program again?!? Enter 'Y' if yes!");
+     char choice = input.next().charAt(0);
+     if ((choice != 'Y') && (choice != 'y')){ a = false; System.out.println("You've entered an invalid character...\nThanks for using this program!");
+}}}}
