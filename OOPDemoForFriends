@@ -1,0 +1,63 @@
+package untilted6;
+
+import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Scanner;
+
+class keys {
+
+    String filename2 = "C:\\Users\\Raja\\Desktop\\keys2.txt";
+    Scanner file2;
+    public int x12;
+    String s1;
+
+    //getters
+    public void getter(int x) throws IOException {
+
+        this.file2 = new Scanner(new File(filename2));
+        x12 = x;
+        if (x12 == 1) {
+            String s = JOptionPane.showInputDialog("Private key of which public key? Enter public key!");
+            while (file2.hasNext()) {
+                if (s.equals(file2.next()))
+                    s1 =  file2.next();
+            }
+        }
+
+        if (x12 == 2) {
+            String s12 = JOptionPane.showInputDialog("Enter the public key:");
+            String s22 = JOptionPane.showInputDialog("Enter the private key:");
+            Writer output2 = new BufferedWriter(new FileWriter(filename2, true));
+            output2.append("\r\n" + s12);
+            output2.append("\r\n" + s22);
+            output2.close();
+        }
+    }
+
+    //setters
+
+    public String setter () {
+        return s1;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------//
+
+public class Java {
+    public static void main(String[] args) throws IOException {
+
+
+        String xaa2 = JOptionPane.showInputDialog("1. Read a private key by giving your public key\n2. Add a new private key\n-----------------------------------------------");
+        int x12 = Integer.parseInt(xaa2);
+
+        keys k = new keys();
+
+        k.getter(x12);
+        k.x12 = 9;
+        System.out.println(k.setter());
+    }
+}
